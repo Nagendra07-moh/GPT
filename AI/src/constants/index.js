@@ -13,6 +13,6 @@ export const  dummyMessages=[
     },
     {
         role:'assistant',
-        content:'Here is your image'
-    },
+        content:'https://img.freepik.com/premium-photo/cat-jacket-that-says-number-10-it_979262-3188.jpg?w=360'
+    }
 ]
