@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, SafeAreaView,Image, ScrollView, Touchable, TouchableOpacity } from 'react-native';
+import { View, Text, SafeAreaView,Image, ScrollView, TouchableOpacity } from 'react-native';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import Features  from '../components/features'
 import {dummyMessages} from '../constants/index'
@@ -7,10 +7,13 @@ import {dummyMessages} from '../constants/index'
 export default function HomeScreen() {
   const [msg, setMsg] = useState(dummyMessages);
   const [recording,setRecording] = useState(false); 
+  const [speaking,setSpeaking] = useState(false); 
+
 
   const clearMsg = () =>{
     setMsg([]);
   }
+  
   return (
     <View className ="flex-1  bg-white">
     <SafeAreaView className="flex-1 flex mx-5">
@@ -92,6 +95,13 @@ export default function HomeScreen() {
       msg.length && (
           <TouchableOpacity  onPress={clearMsg} className="bg-neutral-400 rounded-3xl p-3 px-5 absolute right-5"  >
             <Text className="text-white font-semibold ">Clear</Text>
+        </TouchableOpacity>
+      )
+    }
+    {
+      msg.length && (
+          <TouchableOpacity  onPress={clearMsg} className="bg-neutral-400 rounded-3xl p-3 px-5 absolute left-3"  >
+            <Text className="text-white font-semibold ">Speak</Text>
         </TouchableOpacity>
       )
     }
